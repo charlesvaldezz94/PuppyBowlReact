@@ -1,13 +1,30 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import Navbar from "./Navbar"
+import AllPuppies from "./AllPuppies";
 
 const Main = () => {
-  const [puppyData, setpuppyData] = useState([]);
-  
-  return <div id="main">
+  const [puppyData, setPuppyData] = useState([]);
+  useEffect (() => {
+    async function getPuppyData() {
+      const response = await fetch ("https://fsa-puppy-bowl.herokuapp.com/api/2209-FTB-ET-WEB-FT/players")
+      const result = await response.json()
+      const puppies = result.data.players
+      setPuppyData(puppies)
+    }
+    getPuppyData()
+  }, [])
+
+  return (
+
+  <div id="main">
+
+    <div id="container">
     <Navbar />
-    <h1> I am main </h1>
-  </div>;
+    <AllPuppies puppyData={puppyData}/>
+    </div>
+
+
+  </div>)
 };
 
 export default Main;

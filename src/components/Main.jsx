@@ -5,7 +5,10 @@ import Searchbar from "./DogSearchBar";
 import DogSearchbar from "./DogSearchBar";
 
 const Main = () => {
+
   const [puppyData, setPuppyData] = useState([]);
+  const [searchPuppies, setSearchPuppies] = useState(''); //maybe change later for state update - filteredarray result
+
   useEffect (() => {
     async function getPuppyData() {
       const response = await fetch ("https://fsa-puppy-bowl.herokuapp.com/api/2209-FTB-ET-WEB-FT/players")
@@ -15,15 +18,25 @@ const Main = () => {
     }
     getPuppyData()
   }, [])
-
+function filterPuppyData(){
+  if (!searchPuppies){
+    return puppyData
+  }
+  else {
+    return puppyData.filter((puppy)=>{
+      console.log(searchPuppies)
+      return puppy.name.toLowerCase() === searchPuppies.toLowerCase()
+    })
+  }
+}
   return (
 
   <div id="main">
 
     <div id="container">
     <Navbar />
-    <DogSearchbar puppyData={puppyData}/>
-    <AllPuppies puppyData={puppyData}/>
+    <DogSearchbar setSearchPuppies={setSearchPuppies}/>
+    <AllPuppies puppyData={filterPuppyData()}/>
     </div>
 
 

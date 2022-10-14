@@ -3,6 +3,8 @@ body {
   height: 100vh;
   width: 100vw;
   margin: 0;
+  background-image: url(PuppyBowl.png);
+  background-size: contain;
 }
 
 #Navbar {
@@ -50,8 +52,11 @@ width: 20rem;
 }
 
 button {
-  background-color: lightblue;
+  background-color: rgb(202, 202, 202);
   font-size: 15px;
   margin-top: 5px;
+  border-radius: 15%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bolder
 }
 

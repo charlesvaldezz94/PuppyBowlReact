@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from "react";
 import Navbar from "./Navbar"
 import AllPuppies from "./AllPuppies";
+import Searchbar from "./DogSearchBar";
+import DogSearchbar from "./DogSearchBar";
 
 const Main = () => {
   const [puppyData, setPuppyData] = useState([]);
@@ -20,6 +22,7 @@ const Main = () => {
 
     <div id="container">
     <Navbar />
+    <DogSearchbar puppyData={puppyData}/>
     <AllPuppies puppyData={puppyData}/>
     </div>
 

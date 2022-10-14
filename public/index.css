@@ -1,10 +1,16 @@
 body {
   font-family: 'Raleway', Arial, sans-serif;
-  height: 100vh;
+  /* height: 100vh; */
+  height: 100%;
   width: 100vw;
-  margin: 0;
   background-image: url(PuppyBowl.png);
-  background-size: contain;
+ /* adding some styling */
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  background-size: cover;
+  padding: 0;
+  margin: 0;
 }
 
 #Navbar {
@@ -16,13 +22,33 @@ body {
   color: white;
   display: flex;
   align-items: center;
+  font-size: 25px;
+  padding: .5em .5em .5em .5em;
 }
 
+/* #searchBarContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+} */
+
+#SearchBar {
+  /* border: 3px solid black; */
+  padding: 1em 0 0 1em;
+  /* display: flex;
+  flex-direction: row;
+  align-items:flex-start; */
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+}
 
 .box {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .puppyPicture {
@@ -40,8 +66,6 @@ width: 20rem;
   color: white;
   border-radius: 30px;
 }
-
-
 
 .nameAndId {
   display: flex;

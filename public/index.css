@@ -16,3 +16,42 @@ body {
   align-items: center;
 }
 
+
+.box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.puppyPicture {
+width: 20rem;
+
+}
+
+.puppy {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 15px;
+  background-color: rgba(20, 11, 92, 0.981);
+  color: white;
+  border-radius: 30px;
+}
+
+
+
+.nameAndId {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+button {
+  background-color: lightblue;
+  font-size: 15px;
+  margin-top: 5px;
+}
+

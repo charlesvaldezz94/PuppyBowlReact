@@ -1,20 +1,18 @@
-import React from "react";
-
 const AllPuppies = (props) => {
   const myPuppies = props.puppyData;
-  console.log(myPuppies)
+
 
 
   return (
-  <div className="box"> {`This is the AllPuppies Component`}
+  <div className="box">
     {myPuppies.length ?
       myPuppies.map((puppy) => {
-      console.log(puppy)
         return (
+
           <div key={`player-${puppy.id}`} className = "puppy">
-            <div>{puppy.name}</div>
-            <div>{puppy.breed}</div>
-            <div>{puppy.status}</div>
+            <div className="nameAndId"><span>{puppy.name}</span>{`# ${puppy.id}`}</div>
+            <div><img src={puppy.imageUrl} className = "puppyPicture"></img></div>
+            <button>Details</button>
           </div>
         )
     })

@@ -3,6 +3,7 @@ import Navbar from "./Navbar"
 import AllPuppies from "./AllPuppies";
 import Searchbar from "./DogSearchBar";
 import DogSearchbar from "./DogSearchBar";
+import SinglePuppy from "./SinglePuppy";
 
 const Main = () => {
 
@@ -37,6 +38,7 @@ function filterPuppyData(){
     <Navbar />
     <DogSearchbar setSearchPuppies={setSearchPuppies}/>
     <AllPuppies puppyData={filterPuppyData()}/>
+    <SinglePuppy puppyData={puppyData}/>
     </div>
 
 

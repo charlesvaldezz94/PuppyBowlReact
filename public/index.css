@@ -84,3 +84,10 @@ button {
   font-weight: bolder
 }
 
+#Navbar {
+  color: white;
+  background-color: rgba(20, 11, 92, 0.981);
+  font-size: 35px;
+  display: flex;
+  justify-content: center;
+}

@@ -16,7 +16,11 @@ const AllPuppies = (props) => {
               <div>
                 <img src={puppy.imageUrl} className="puppyPicture"></img>
               </div>
-              <button>Details</button>
+              <div className ="DetailsButton">
+                <a href="https://fsa-puppy-bowl.herokuapp.com/api/2209-FTB-ET-WEB-FT/players/7439">
+              <button> Details </button>
+              </a>
+              </div>
             </div>
           );
         })

@@ -4,11 +4,19 @@ import AllPuppies from "./AllPuppies";
 import Searchbar from "./DogSearchBar";
 import DogSearchbar from "./DogSearchBar";
 import SinglePuppy from "./SinglePuppy";
+import GrabPuppy from './GrabPuppy'
 
 const Main = () => {
   const [puppyData, setPuppyData] = useState([]);
+  const [searchPuppies, setSearchPuppies] = useState('');
 
-  const [searchPuppies, setSearchPuppies] = useState(''); 
+// The part below is still a work in progress..just trying different things.
+  const [pups, setPups] = useState({});
+  let specificDog
+  const whichPuppy = puppyData.map((dog) => {specificDog = "https://fsa-puppy-bowl.herokuapp.com/api/2209-FTB-ET-WEB-FT/players/" + `${dog.id}`} )
+  const justOneDog = specificDog
+console.log(justOneDog)
+// This is where the work in progress ends 
 
   useEffect (() => {
     async function getPuppyData() {
@@ -44,6 +52,7 @@ function handleDetailsClick(event) {
     <DogSearchbar setSearchPuppies={setSearchPuppies}/>
     <AllPuppies puppyData={filterPuppyData()}/>
     <SinglePuppy puppyData={puppyData}/>
+    <GrabPuppy whichPuppy={whichPuppy}/>
     </div>
   </div>)
 };

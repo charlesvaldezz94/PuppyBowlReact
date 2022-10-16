@@ -6,9 +6,9 @@ import DogSearchbar from "./DogSearchBar";
 import SinglePuppy from "./SinglePuppy";
 
 const Main = () => {
-
   const [puppyData, setPuppyData] = useState([]);
-  const [searchPuppies, setSearchPuppies] = useState(''); //maybe change later for state update - filteredarray result
+
+  const [searchPuppies, setSearchPuppies] = useState(''); 
 
   useEffect (() => {
     async function getPuppyData() {
@@ -19,6 +19,7 @@ const Main = () => {
     }
     getPuppyData()
   }, [])
+
 function filterPuppyData(){
   if (!searchPuppies){
     return puppyData
@@ -30,18 +31,15 @@ function filterPuppyData(){
     })
   }
 }
+
   return (
-
   <div id="main">
-
     <div id="container">
     <Navbar />
     <DogSearchbar setSearchPuppies={setSearchPuppies}/>
     <AllPuppies puppyData={filterPuppyData()}/>
     <SinglePuppy puppyData={puppyData}/>
     </div>
-
-
   </div>)
 };
 

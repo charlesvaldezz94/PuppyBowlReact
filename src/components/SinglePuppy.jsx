@@ -5,8 +5,9 @@ import React, { useState, useEffect } from "react"
 
 const SinglePuppy = (props) => {
     const allDogs = props.puppyData
-    const [pups, setPups] = useState({})
 
+    const [pups, setPups] = useState({})
+    
     return (
       useEffect(() => {
         async function getPuppies() {
@@ -17,16 +18,9 @@ const SinglePuppy = (props) => {
             const puppy = result.data.player
             setPups(puppy)  
             console.log(puppy)         
-            
         }
-
         getPuppies()
-
-      
     }, []))
-
-
-
 }
 
 export default SinglePuppy

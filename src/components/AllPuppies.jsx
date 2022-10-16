@@ -26,7 +26,7 @@ const AllPuppies = (props) => {
           );
         })
       ) : (
-        <div className = "LoadingScreen">Loading the cutest puppies...</div>
+        <div className = "LoadingScreen"> Loading the cutest puppies...</div>
       )}
     </div>
   );

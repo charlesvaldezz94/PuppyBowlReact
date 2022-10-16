@@ -32,13 +32,19 @@ function filterPuppyData(){
   }
 }
 
+//trying a function here 
+
   return (
   <div id="main">
     <div id="container">
     <Navbar />
     <DogSearchbar setSearchPuppies={setSearchPuppies}/>
     <AllPuppies puppyData={filterPuppyData()}/>
-    <SinglePuppy puppyData={puppyData}/>
+
+    {/* changed below for testing details button */}
+    {/* <SinglePuppy puppyData={puppyData}/> */}
+    
+    <SinglePuppy setPups = {setPups}/>
     </div>
   </div>)
 };

@@ -2,6 +2,7 @@ import React from "react"
 
 const AllPuppies = (props) => {
   const myPuppies = props.puppyData;
+  console.log(myPuppies);
 
   return (
     <div className="box">
@@ -25,7 +26,7 @@ const AllPuppies = (props) => {
           );
         })
       ) : (
-        <div>Loading the cutest puppies...</div>
+        <div className = "LoadingScreen">Loading the cutest puppies...</div>
       )}
     </div>
   );

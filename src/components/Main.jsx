@@ -33,6 +33,9 @@ function filterPuppyData(){
 }
 
 //trying a function here 
+function handleDetailsClick(event) {
+  console.log("details clicked!")
+}
 
   return (
   <div id="main">
@@ -40,11 +43,7 @@ function filterPuppyData(){
     <Navbar />
     <DogSearchbar setSearchPuppies={setSearchPuppies}/>
     <AllPuppies puppyData={filterPuppyData()}/>
-
-    {/* changed below for testing details button */}
-    {/* <SinglePuppy puppyData={puppyData}/> */}
-    
-    <SinglePuppy setPups = {setPups}/>
+    <SinglePuppy puppyData={puppyData}/>
     </div>
   </div>)
 };

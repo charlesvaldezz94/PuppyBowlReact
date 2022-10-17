@@ -2,7 +2,7 @@ import React from "react"
 
 const AllPuppies = (props) => {
   const myPuppies = props.puppyData;
-  console.log(myPuppies);
+  // console.log(myPuppies);
 
   return (
     <div className="box">

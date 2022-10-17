@@ -15,7 +15,7 @@ const Main = () => {
   let specificDog
   const whichPuppy = puppyData.map((dog) => {specificDog = "https://fsa-puppy-bowl.herokuapp.com/api/2209-FTB-ET-WEB-FT/players/" + `${dog.id}`} )
   const justOneDog = specificDog
-console.log(justOneDog)
+// console.log(justOneDog)
 // This is where the work in progress ends 
 
   useEffect (() => {
@@ -36,8 +36,7 @@ console.log(justOneDog)
         setPups(puppy)      
 
     }
-getPuppies()
-
+getPuppies();
 }, [])
 
 function filterPuppyData(){
@@ -62,7 +61,9 @@ function handleDetailsClick(event) {
     <div id="container">
     <Navbar />
     <DogSearchbar setSearchPuppies={setSearchPuppies}/>
-    <AllPuppies puppyData={filterPuppyData()}  />
+    <AllPuppies 
+    puppyData={filterPuppyData()}
+    />
     <SinglePuppy puppyData={puppyData}/>
     <GrabPuppy whichPuppy={whichPuppy}/>
     </div>

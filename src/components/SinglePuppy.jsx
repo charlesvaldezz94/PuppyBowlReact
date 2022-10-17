@@ -6,8 +6,8 @@ const SinglePuppy = (props) => {
     const specificDog = props.whichPuppy
 
 
-
-
+let url
+allDogs.map((dog) => {url = "https://fsa-puppy-bowl.herokuapp.com/api/2209-FTB-ET-WEB-FT/players/"+ `${dog.id}`})
    
        
 

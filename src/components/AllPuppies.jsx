@@ -18,7 +18,7 @@ const AllPuppies = (props) => {
                 <img src={puppy.imageUrl} className="puppyPicture"></img>
               </div>
               <div className ="DetailsButton">
-                <a href="https://fsa-puppy-bowl.herokuapp.com/api/2209-FTB-ET-WEB-FT/players/7439">
+                <a href="https://fsa-puppy-bowl.herokuapp.com/api/2209-FTB-ET-WEB-FT/players/" target="_blank">
               <button> Details </button>
               </a>
               </div>

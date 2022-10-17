@@ -28,6 +28,18 @@ console.log(justOneDog)
     getPuppyData()
   }, [])
 
+  useEffect(() => {
+    async function getPuppies() {
+        const response = await fetch("https://fsa-puppy-bowl.herokuapp.com/api/2209-FTB-ET-WEB-FT/players/7441")
+        const result = await response.json()
+        const puppy = result.data.player
+        setPups(puppy)      
+
+    }
+getPuppies()
+
+}, [])
+
 function filterPuppyData(){
   if (!searchPuppies){
     return puppyData
@@ -50,7 +62,7 @@ function handleDetailsClick(event) {
     <div id="container">
     <Navbar />
     <DogSearchbar setSearchPuppies={setSearchPuppies}/>
-    <AllPuppies puppyData={filterPuppyData()}/>
+    <AllPuppies puppyData={filterPuppyData()}  />
     <SinglePuppy puppyData={puppyData}/>
     <GrabPuppy whichPuppy={whichPuppy}/>
     </div>

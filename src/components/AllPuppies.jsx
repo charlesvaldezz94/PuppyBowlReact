@@ -1,13 +1,17 @@
-import React from "react"
+import React from "react";
 
 const AllPuppies = (props) => {
-  const myPuppies = props.puppyData;
-  // console.log(myPuppies);
+  const puppyData = props.puppyData;
+  const getClickedPuppy = props.getClickedPuppy
 
+  //map through puppyData array of objects
+  //set each key to a div
+  //on click button calls getClickedPuppy func and
+  //passes in puppyId for puppy data fetch request in main
   return (
     <div className="box">
-      {myPuppies.length ? (
-        myPuppies.map((puppy) => {
+      {puppyData.length ? (
+        puppyData.map((puppy) => {
           return (
             <div key={`player-${puppy.id}`} className="puppy">
               <div className="nameAndId">
@@ -17,16 +21,20 @@ const AllPuppies = (props) => {
               <div>
                 <img src={puppy.imageUrl} className="puppyPicture"></img>
               </div>
-              <div className ="DetailsButton">
-                <a href="https://fsa-puppy-bowl.herokuapp.com/api/2209-FTB-ET-WEB-FT/players/" target="_blank">
-              <button> Details </button>
-              </a>
-              </div>
+              <button
+                type="button"
+                id="DetailsButton"
+                onClick={() => {
+                  getClickedPuppy(puppy.id);
+                }}
+              >
+                Details
+              </button>
             </div>
           );
         })
       ) : (
-        <div className = "LoadingScreen"> Loading the cutest puppies...</div>
+        <div className="LoadingScreen"> Loading the cutest puppies...</div>
       )}
     </div>
   );

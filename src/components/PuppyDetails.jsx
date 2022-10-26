@@ -2,7 +2,6 @@ import React from "react";
 
 const PuppyDetails = (props) => {
   const clickedPuppy = props.clickedPuppy;
-  const getClickedPuppy = props.getClickedPuppy;
 
   //pass in clickedPuppy state data (individual puppy data from dynamic api/fetch)
   //created new div to display all relevant puppy data
@@ -32,10 +31,9 @@ const PuppyDetails = (props) => {
             <b>Team Score: </b>
             {clickedPuppy.team.score}
           </p>
-          {/* tried adding a back button but could not get this to work */}
-          {/* <button type="button" id="backButton" onClick={() => {
-            getClickedPuppy(null)
-          }}>Back</button> */}
+          <button type="button" id="backButton" onClick={() => {
+           props.setClickedPuppy({})
+          }}>Back</button>
         </span>
       </div>
     </div>
